@@ -71,6 +71,10 @@ def simulate(control):
             kf = float(r.get('kf', 0.0))
             kb = float(r.get('kb', 0.0))
 
+        # validate rate constants
+        if kf < 0 or kb < 0:
+            raise ValueError(f'Negative rate constant not allowed in reaction {eq!r}: kf={kf}, kb={kb}')
+
         react, prod, react_orders, prod_orders = parser.parse_reaction(eq)
         for nm in list(react.keys()) + list(prod.keys()):
             if nm not in name_to_idx:

@@ -3,7 +3,7 @@ species:
   - [B, 1.0]
   - [C, 0.0]
 
-# A has order 0: 0^0 case should be handled (treated as 1)
+# 0^0 被定义为1
 reactions:
   - ["A(0) + B -- C", 1.0, 0.0]
 

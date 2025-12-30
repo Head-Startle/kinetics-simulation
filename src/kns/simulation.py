@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.8
+#!/usr/bin/env python3
 """simulation.py (main entry)
 
 Lightweight main script that reads a YAML control file, prepares output

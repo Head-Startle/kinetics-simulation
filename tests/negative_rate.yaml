@@ -1,0 +1,11 @@
+species:
+  - [A, 1.0]
+  - [B, 0.0]
+
+# 本例故意使用负的反应速率常数，用于测试校验功能
+reactions:
+  - ["A -- B", -0.5, 0.0]
+
+dt: 0.01
+steps: 100
+output: negative_rate

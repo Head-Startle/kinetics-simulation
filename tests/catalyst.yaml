@@ -1,0 +1,13 @@
+species:
+  - [substrate, 1.0]
+  - [catalyst, 0.1, cat] # catalyst 可以定义一个别名 'cat'，方便反应方程式的书写
+  - [complex, 0.0]
+  - [product, 0.0]
+
+reactions:
+  - ["substrate(2) + cat -- complex", 1.0, 0.0]
+  - ["complex -- product + cat", 0.5, 0.0]
+
+dt: 0.01
+steps: 1000
+output: catalyst.csv

@@ -1,0 +1,11 @@
+species:
+  - [A, 1.0]
+  - [B, 0.0]
+
+# 本例中，A的化学计量数经累加后为2，反应级数无人为定义，默认取其化学计量数2
+reactions:
+  - ["A + A -- B", 1.0, 0.0]
+
+dt: 0.01
+steps: 500
+output: duplicate_substrate

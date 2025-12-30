@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "kns"
 version = "0.1.0"
-description = "化学动力学模拟器 - 基于显式欧拉法的化学反应浓度-时间模拟工具"
+description = "化学反应浓度-时间模拟工具"
 readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.8"
@@ -13,7 +13,6 @@ dependencies = [
     "pyyaml",
     "numpy",
     "matplotlib",
-    "pandas",
     "tqdm",
 ]
 
