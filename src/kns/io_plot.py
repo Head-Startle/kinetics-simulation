@@ -75,7 +75,8 @@ def interactive_plot(times, data, species, title=None, outdir=None):
             slider.set_val(new_idx)
         return []
 
-    fig.suptitle(title or '')
+    fig.suptitle(title or 'Kinetics Simulation')
+    fig.canvas.manager.set_window_title(title or 'Kinetics Simulation')
     fig.ani = FuncAnimation(fig, update_anim, interval=30, cache_frame_data=False)
     print('Simulation complete. Opening plot window...')
-    plt.show()
+    plt.show(block=False)
