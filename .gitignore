@@ -1,0 +1,24 @@
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Output directories
+dat/
+pic/
+
+# macOS
+.DS_Store
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Egg info
+src/*.egg-info/

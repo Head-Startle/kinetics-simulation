@@ -1,0 +1,12 @@
+species:
+  - [A, 0.0]
+  - [B, 1.0]
+  - [C, 0.0]
+
+# A has order 0: 0^0 case should be handled (treated as 1)
+reactions:
+  - ["A(0) + B -- C", 1.0, 0.0]
+
+dt: 0.01
+steps: 500
+output: zero_initial
