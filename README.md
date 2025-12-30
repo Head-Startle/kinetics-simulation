@@ -53,15 +53,17 @@ title: "反应动力学" # 可选，窗口标题
 
 ### 2. 运行模拟
 
-```bash
-# 方式 1：作为模块运行（推荐）
-python3.8 -m kns                                  # 使用默认 control.yaml
-python3.8 -m kns my_config.yaml                  # 指定控制文件
-python3.8 -m kns --plot dat/result.csv           # 仅绘制已有数据
+> 注意：本项目已移除作为模块导入的入口（不再支持 `python -m kns`）。请使用安装后的命令行工具 `kns` 来运行模拟或绘图。
 
-# 方式 2：使用安装的命令（需先 pip install -e .）
+```bash
+# 使用安装的命令（推荐）
+pip install -e .    # 开发模式安装一次后可使用下列命令
+
+# 运行模拟（读取 control.yaml 或指定配置文件）
 kns
 kns my_config.yaml
+
+# 仅绘制已有 CSV 数据
 kns --plot dat/result.csv
 ```
 
@@ -116,12 +118,12 @@ species:
 
 ## 🧪 测试
 
-运行边界测试：
+运行边界测试（使用 CLI）：
 
 ```bash
-python3.8 -m simulation.simulation tests/alias_order.yaml
-python3.8 -m simulation.simulation tests/duplicate_order.yaml
-python3.8 -m simulation.simulation tests/zero_initial.yaml
+kns tests/alias_order.yaml
+kns tests/duplicate_order.yaml
+kns tests/zero_initial.yaml
 ```
 
 ## 📊 输出
