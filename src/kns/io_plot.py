@@ -79,4 +79,4 @@ def interactive_plot(times, data, species, title=None, outdir=None):
     fig.canvas.manager.set_window_title(title or 'Kinetics Simulation')
     fig.ani = FuncAnimation(fig, update_anim, interval=30, cache_frame_data=False)
     print('Simulation complete. Opening plot window...')
-    plt.show(block=False)
+    plt.show()
