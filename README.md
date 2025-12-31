@@ -14,7 +14,7 @@
 
 更多关于命令行工具的基础操作（什么是工作目录、如何切换、常用查看/列出命令等）已整理到独立文档：[CLI-instruction.md](CLI-instruction.md)。请移步查看该文件以获取完整教程。
 
-### 2. 安装依赖
+### 2. 安装python
 
 确保已安装 Python，如没有python，请这样做：
 
@@ -58,7 +58,7 @@ python --version
 
    应跳出安装的版本号。如报错，请至电脑的设置-环境变量-用户变量-Path里,把刚安装的python.exe的路径移到最前面，该路径可直接在开始菜单栏查找python应用程序，获取其路径得到。
 
-## 🚀 快速开始-前提：已安装好python和pip
+## 🚀 快速开始-前提：已安装好python
 
 ### 1. 准备控制文件
 
@@ -87,6 +87,8 @@ title: "反应动力学" # 可选，窗口标题
 ```bash
 # 安装项目及其依赖
 python3 -m pip install -e .
+# 若报错，使用：
+python -m pip install -e .
 
 # 运行模拟（读取 control.yaml 或指定配置文件）
 kns my_config.yaml
