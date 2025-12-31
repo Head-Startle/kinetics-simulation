@@ -6,27 +6,13 @@
 
 ### 1. 克隆项目
 
-如果电脑上有git工具，打开终端/命令提示符，输入：
+开发者通常会使用git工具克隆项目，它能够实现代码在本地与远程之间的同步，记录代码的更改历史，以便于项目发布与更新，这里不详细介绍。
 
-```bash
-git clone https://github.com/Head-Startle/kinetics-simulation.git
-cd kinetics-simulation # 切换到项目的根目录（顶层文件夹）
-```
+最简单的办法是直接下载zip压缩包，然后在本地解压，解压位置任选。
 
-如果网络不好，或者没有git工具，直接使用分发的项目文件夹即可。
+然后打开电脑上的**命令行工具**（如Windows操作系统的命令提示符/PowerShell，macOS的终端），切换工作目录到该文件夹。
 
-然后打开电脑上的**命令行工具**（如命令提示符/PowerShell/终端），切换工作目录到该文件夹。
-
-🧐什么是工作目录，如何切换？
-   
-- 工作目录就是属于命令行工具的“文件资源管理器/访达”界面，一个“办公室”。
-- 当你想要告诉命令行工具打开/修改/读取一个文件时，我们需要告诉它这个文件的**所在地**和**名字**。所在地可以使用“相对路径”和“绝对路径”两种填写方法。前者就是从当前目录出发，一级一级深入到需要指定的文件；后者就是从电脑磁盘的最底层出发，需要从C或D或E盘开始一路指定。在到达目标文件的路径最后，写上文件名，就可以给命令行工具传输文件了。
-- 那么，工作目录，即这个“办公室”如何切换呢？**使用cd命令！**，cd意为“change directory”
-- 通常情况下，打开命令提示符/PowerShell，光标前会有一串字符（一般是`C:\Users\yourname>`），这个就是工作目录。在显示屏上，我们已经习惯了看到目录下有哪些文件和子目录，但命令行工具不会，想要看到工作目录里有些什么，需要敲一行命令：
-
-- macOS / Linux (bash/zsh)：使用 `pwd` 显示当前工作目录（返回完整路径）。
-- Windows 命令提示符 (cmd.exe)：使用 `cd`（不带参数）或 `echo %cd%` 显示当前目录；
-- Windows PowerShell：`pwd` 可用，也可使用 `Get-Location`。
+更多关于命令行工具的基础操作（什么是工作目录、如何切换、常用查看/列出命令等）已整理到独立文档：[CLI-instruction.md](CLI-instruction.md)。请移步查看该文件以获取完整教程。
 
 ### 2. 安装依赖
 
@@ -35,29 +21,42 @@ cd kinetics-simulation # 切换到项目的根目录（顶层文件夹）
 #### macOS 系统
 
 1. 访问 [Python 官网](https://www.python.org/downloads/)
-2. 下载适用于 macOS 的最新 Python 安装包（.pkg 文件），大于3.8的版本即可
+2. 下载适用于 macOS 的最新 Python 安装包（.pkg 文件）
 3. 双击下载的 .pkg 文件，按照安装向导完成安装
 4. 打开"终端"（Terminal），验证安装：
 
    ```bash
    python3 --version
-   pip3 --version
    ```
 
 #### Windows 系统
 
-1. 访问 [Python 官网](https://www.python.org/downloads/)
-2. 下载最新的 Python 安装包（.exe 文件），大于3.8的版本即可
-3. 运行安装程序，**务必勾选** "Add Python to PATH"
-4. 点击 "Install Now" 完成安装
-5. 打开"命令提示符"（cmd）或 PowerShell，验证安装：
+**最简单的方案**：打开PowerShell，直接输入：
 
-   ```bash
+```powershell
+python
+```
+
+在win10/11版本中，电脑已经预置了一个python占位符。运行后，电脑会跳转至Microsoft Store，在那里安装即可。
+
+然后验证安装：
+
+```powershell
+python --version
+```
+
+或者走官网途径：
+
+1. 访问 [Python 官网](https://www.python.org/downloads/)
+2. 下载最新的 Python 安装管理器(.msix文件)
+3. 打开运行，跳出提示，全选y（yes）即可
+4. 打开"命令提示符"（cmd）或 PowerShell，验证安装：
+
+   ```powershell
    python --version
-   pip --version
    ```
 
-> **提示**：pip 会随 Python 一起自动安装
+   应跳出安装的版本号。如报错，请至电脑的设置-环境变量-用户变量-Path里,把刚安装的python.exe的路径移到最前面，该路径可直接在开始菜单栏查找python应用程序，获取其路径得到。
 
 ## 🚀 快速开始-前提：已安装好python和pip
 
@@ -86,11 +85,8 @@ title: "反应动力学" # 可选，窗口标题
 打开终端或命令提示符，切换到项目根目录，依次运行：
 
 ```bash
-# 安装依赖
-pip install -r requirements.txt
-
-# 使用安装的命令
-pip install -e .    # 开发模式安装一次后可使用下列命令
+# 安装项目及其依赖
+python3 -m pip install -e .
 
 # 运行模拟（读取 control.yaml 或指定配置文件）
 kns my_config.yaml
@@ -112,7 +108,6 @@ kns --plot dat/result.csv
 kinetics-simulation/
 ├── control.yaml # 控制文件模板（示例配置）
 ├── pyproject.toml # 项目配置与依赖（可用于安装）
-├── requirements.txt # Python 依赖列表（直接 pip install -r）
 ├── README.md # 项目文档
 ├── LICENSE # MIT 许可证
 ├── src/

@@ -6,6 +6,10 @@ from pathlib import Path
 
 
 def interactive_plot(times, data, species, title=None, outdir=None):
+    # 配置中文字体支持
+    plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'DejaVu Sans']
+    plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+    
     # set default save directory for toolbar save dialog
     if outdir:
         plt.rcParams['savefig.directory'] = str(outdir)
