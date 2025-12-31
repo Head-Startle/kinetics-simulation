@@ -9,19 +9,18 @@
 打开终端/命令提示符，输入：
 
 ```bash
-  git clone https://github.com/Head-Startle/kinetics-simulation.git
-  cd kinetics-simulation # 切换到项目的根目录（顶层文件夹）
+git clone https://github.com/Head-Startle/kinetics-simulation.git
+cd kinetics-simulation # 切换到项目的根目录（顶层文件夹）
 ```
 
 如果网络不好，直接使用分发的项目文件夹即可。然后打开终端/命令提示符，
 切换工作目录到该文件夹(输入pwd，为kinetics-simulation的完整路径)
 
-<!--
 说明：
+
 - macOS / Linux (bash/zsh)：使用 `pwd` 显示当前工作目录（返回完整路径）。
 - Windows 命令提示符 (cmd.exe)：使用 `cd`（不带参数）或 `echo %cd%` 显示当前目录；
 - Windows PowerShell：`pwd` 可用，也可使用 `Get-Location`。
--->
 
 ### 2. 安装依赖
 
@@ -29,38 +28,10 @@
 
 #### macOS 系统
 
-- 方法一：通过官网安装
-
 1. 访问 [Python 官网](https://www.python.org/downloads/)
 2. 下载适用于 macOS 的最新 Python 安装包（.pkg 文件），大于3.8的版本即可
 3. 双击下载的 .pkg 文件，按照安装向导完成安装
 4. 打开"终端"（Terminal），验证安装：
-
-   ```bash
-   python3 --version
-   pip3 --version
-   ```
-
-- 方法二：使用 Homebrew 安装
-
-1. 打开"终端"（Terminal）应用
-
-2. 安装Homebrew
-
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-3. 按照终端提示完成安装（可能需要输入密码）
-4. 如果终端提示需要将 Homebrew 添加到 PATH，请按照提示执行相应命令
-
-5. 安装 Python：
-
-   ```bash
-   brew install python
-   ```
-
-6. 验证安装：
 
    ```bash
    python3 --version
