@@ -40,55 +40,55 @@
 
 - 在 macOS / Linux（bash/zsh）：
 
-```bash
-# 进入子目录
-cd mydir
-# 或者
-cd ./mydir # 一个点表示当前所处的目录
-
-# 回到上级目录，连续两个点就表示上一级目录
-cd ..
-
-# 回到上上级目录就是：
-cd ../../
-
-# 绝对路径写法，用`/`开头
-cd /Users/yourname/路径/to/mydir
-
-# 进入主目录
-cd ~
-
-# 切回上一次目录
-cd -
-```
+  ```bash
+  # 进入子目录
+  cd mydir
+  # 或者
+  cd ./mydir # 一个点表示当前所处的目录
+  
+  # 回到上级目录，连续两个点就表示上一级目录
+  cd ..
+  
+  # 回到上上级目录就是：
+  cd ../../
+  
+  # 绝对路径写法，用`/`开头
+  cd /Users/yourname/路径/to/mydir
+  
+  # 进入主目录
+  cd ~
+  
+  # 切回上一次目录
+  cd -
+  ```
 
 - 在 Windows CMD：
 
-```cmd
-REM 进入子目录
-cd mydir
-
-REM 回到上级目录
-cd ..
-
-REM 切换到指定盘符的路径（若要同时切换盘符，使用 /d）
-cd /d D:\path\to\mydir
-
-REM 查看当前目录
-cd
-```
+  ```cmd
+  # 进入子目录
+  cd mydir
+  
+  # 回到上级目录
+  cd ..
+  
+  # 切换到指定盘符的路径（若要同时切换盘符，使用 /d）
+  cd /d D:\path\to\mydir
+  
+  # 查看当前目录
+  cd
+  ```
 
 - 在 PowerShell（与 bash 类似）：
 
-```powershell
-# 进入子目录
-cd mydir
-# 或
-Set-Location mydir
-
-# 查看当前位置
-Get-Location
-```
+  ```powershell
+  # 进入子目录
+  cd mydir
+  # 或
+  Set-Location mydir
+  
+  # 查看当前位置
+  Get-Location
+  ```
 
 - 额外提示：
   - 路径中有空格时用引号：cd "my folder"
